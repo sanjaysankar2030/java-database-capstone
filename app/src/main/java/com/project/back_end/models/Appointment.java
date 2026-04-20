@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 public class Appointment {
 
 // @Entity annotation:
-//    - Marks the class as a JPA entity, meaning it represents a table in the database.
+//    - Marks the class as a JPA entity, meaning it representsad a table in the database.
 //    - Required for persistence frameworks (e.g., Hibernate) to map the class to a database table.
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,7 +39,7 @@ public class Appointment {
 //      - The @ManyToOne annotation defines the relationship, indicating many appointments can be linked to one patient.
 //      - The @NotNull annotation ensures that an appointment must be associated with a patient when created.
     @NotNull
-    @Future
+    @Future(message = "Appointment time must be in the future")
     @Column(nullable = false)
     private LocalDateTime appointmentTime;
 // 4. 'appointmentTime' field:
