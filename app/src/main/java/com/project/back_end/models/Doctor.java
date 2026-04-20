@@ -46,8 +46,8 @@ public class Doctor {
         name = "doctor_available_times",
         joinColumns = @JoinColumn(name = "doctor_id")
     )
-    @Column(name = "time_slot")
-    private List<String> availableTimes;
+    @Column(name = "available_times")
+    private List<String> available_times;
 
     // Getters and Setters
 
