@@ -1,3 +1,40 @@
+import { API_BASE_URL } from "../config/config.js";
+const DOCTOR_API = API_BASE_URL + '/doctor'
+
+async function getDoctors(){
+  try{
+  const response = fetch(DOCTOR_API);
+  const data = await response.json();
+  return data.doctors;
+}catch(error){
+  console.error("Error fetching details",errors);
+  return [];
+}
+
+async function deleteDoctor(id, token) {
+    try {
+        const response = await fetch(`${DOCTOR_API}/${id}/${token}`, {
+            method: "DELETE"
+        });
+
+        const data = await response.json();
+
+        return {
+            success: response.ok,
+            message: data.message || "Doctor deleted successfully"
+        };
+
+    } catch (error) {
+        console.error("Error deleting doctor:", error);
+
+        return {
+            success: false,
+            message: "Failed to delete doctor"
+        };
+    }
+}
+
+
 /*
   Import the base API URL from the config file
   Define a constant DOCTOR_API to hold the full endpoint for doctor-related actions
@@ -12,6 +49,28 @@
    If there's an error (e.g., network issue), log it and return an empty array
 
 
+   async function deleteDoctor(id, token) {
+    try {
+        const response = await fetch(`${DOCTOR_API}/${id}/${token}`, {
+            method: "DELETE"
+        });
+
+        const data = await response.json();
+
+        return {
+            success: response.ok,
+            message: data.message || "Doctor deleted successfully"
+        };
+
+    } catch (error) {
+        console.error("Error deleting doctor:", error);
+
+        return {
+            success: false,
+            message: "Failed to delete doctor"
+        };
+    }
+}
   Function: deleteDoctor
   Purpose: Delete a specific doctor using their ID and an authentication token
 
