@@ -21,7 +21,7 @@ private Service service;
 
     @GetMapping("/adminDashboard/{token}")
     public String adminDashboard(@PathVariable String token){
-        boolean isValid=service.validateToken(token,'admin');
+        boolean isValid=service.validateToken(token,"admin");
         if(isValid){
             return "admin/adminDashboard";
         }
@@ -41,10 +41,10 @@ private Service service;
 //    - If invalid, redirects to the root URL, likely the login or home page.
 
 @GetMapping("/doctorDashboard/{token}")
-public String doctorDashboard(@PathVariable String {token}){
-    boolean isValid=service.validateToken(token,'doctor');
+public String doctorDashboard(@PathVariable String token){
+    boolean isValid=service.validateToken(token,"doctor");
     if(isValid){
-        return  "doctor/doctorDashboard"
+        return  "doctor/doctorDashboard";
     }
     else{
         return "redirect:/";
