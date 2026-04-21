@@ -1,5 +1,16 @@
 package com.project.back_end.services;
 
+import java.time.LocalDate;
+
+import org.springframework.stereotype.Service;
+
+import com.project.back_end.repo.DoctorRepository;
+
+import jakarta.transaction.Transactional;
+import java.util.List;
+import java.time.LocalDate;
+
+@Service
 public class DoctorService {
 
 // 1. **Add @Service Annotation**:
@@ -11,11 +22,20 @@ public class DoctorService {
 //    - The `DoctorService` class depends on `DoctorRepository`, `AppointmentRepository`, and `TokenService`.
 //    - These dependencies should be injected via the constructor for proper dependency management.
 //    - Instruction: Ensure constructor injection is used for injecting dependencies into the service.
+    private DoctorRepository doctorRepository;
+    private AppointmentService appointmetnService;
+    private TokenService tokenService;
+
 
 // 3. **Add @Transactional Annotation for Methods that Modify or Fetch Database Data**:
 //    - Methods like `getDoctorAvailability`, `getDoctors`, `findDoctorByName`, `filterDoctorsBy*` should be annotated with `@Transactional`.
 //    - The `@Transactional` annotation ensures that database operations are consistent and wrapped in a single transaction.
 //    - Instruction: Add the `@Transactional` annotation above the methods that perform database operations or queries.
+    @Transactional
+    public List<String> getDoctorAvailability(Long doctorId,LocalDate date){
+
+
+    }
 
 // 4. **getDoctorAvailability Method**:
 //    - Retrieves the available time slots for a specific doctor on a particular date and filters out already booked slots.

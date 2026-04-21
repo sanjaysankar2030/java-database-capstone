@@ -21,7 +21,5 @@ public class AdminController {
 //    - Delegates authentication logic to the `validateAdmin` method in the service layer.
 //    - Returns a `ResponseEntity` with a `Map` containing login status or messages.
 
-
-
 }
 
