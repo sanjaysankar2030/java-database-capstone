@@ -26,7 +26,7 @@ public class Login {
 //    - The 'getEmail()' method allows access to the email value.
 //    - The 'setEmail(String email)' method sets the email value.
 //    - The 'getPassword()' method allows access to the password value.
-//    - The 'setPassword(String password)' method sets the password value.
+//    - The 'setPassword(String password)' method sets the password  value.  
     public String getEmail() {
         return email;
     }
