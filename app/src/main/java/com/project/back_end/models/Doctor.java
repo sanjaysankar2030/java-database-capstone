@@ -100,10 +100,10 @@ public class Doctor {
     }
 
     public List<String> getAvailableTimes() {
-        return availableTimes;
+        return available_times;
     }
 
-    public void setAvailableTimes(List<String> availableTimes) {
-        this.availableTimes = availableTimes;
+    public void setAvailableTimes(List<String> available_times) {
+        this.available_times = available_times;
     }
 }
