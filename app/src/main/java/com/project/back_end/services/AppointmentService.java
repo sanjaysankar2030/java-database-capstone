@@ -15,6 +15,7 @@ import java.time.LocalTime;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ArrayList;
 
 @Service 
 public class AppointmentService {
@@ -139,6 +140,7 @@ public Map<String, Object> getAppointments(Long doctorId, LocalDate date, String
 
     return response;
 }
+
 // 7. **Get Appointments Method**:
 //    - This method retrieves a list of appointments for a specific doctor on a particular day, optionally filtered by the patient's name.
 //    - It uses `@Transactional` to ensure that database operations are consistent and handled in a single transaction.
@@ -148,4 +150,5 @@ public Map<String, Object> getAppointments(Long doctorId, LocalDate date, String
 //    - This method updates the status of an appointment by changing its value in the database.
 //    - It should be annotated with `@Transactional` to ensure the operation is executed in a single transaction.
 //    - Instruction: Add `@Transactional` before this method to ensure atomicity when updating appointment status.
+
 }

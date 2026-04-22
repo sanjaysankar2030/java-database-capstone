@@ -67,6 +67,7 @@ public class AppointmentDTO {
 //    - Description:
 //      - Represents the scheduled date and time of the appointment.
 //      - The time when the appointment is supposed to happen, stored as a LocalDateTime object.
+
     private int status;
 
 // 10. 'status' field:
@@ -74,6 +75,7 @@ public class AppointmentDTO {
 //    - Description:
 //      - Represents the status of the appointment.
 //      - Status can indicate if the appointment is "Scheduled:0", "Completed:1", or other statuses (e.g., "Canceled") as needed.
+
     private LocalDate appointmentDate;
 
 // 11. 'appointmentDate' field (Custom Getter):

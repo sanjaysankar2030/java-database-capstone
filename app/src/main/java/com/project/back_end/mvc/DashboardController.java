@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+
 @Controller
 public class DashboardController {
 
@@ -28,11 +29,7 @@ private Service service;
         else{
             return "redirect:/";
         }
-
-
-}
-
-
+    }
 // 3. Define the `adminDashboard` Method:
 //    - Handles HTTP GET requests to `/adminDashboard/{token}`.
 //    - Accepts an admin's token as a path variable.
@@ -40,16 +37,17 @@ private Service service;
 //    - If the token is valid (i.e., no errors returned), forwards the user to the `"admin/adminDashboard"` view.
 //    - If invalid, redirects to the root URL, likely the login or home page.
 
-@GetMapping("/doctorDashboard/{token}")
-public String doctorDashboard(@PathVariable String token){
-    boolean isValid=service.validateToken(token,"doctor");
-    if(isValid){
-        return  "doctor/doctorDashboard";
-    }
-    else{
-        return "redirect:/";
-    }
-} 
+    @GetMapping("/doctorDashboard/{token}")
+        public String doctorDashboard(@PathVariable String token){
+            boolean isValid=service.validateToken(token,"doctor");
+            if(isValid){
+                return  "doctor/doctorDashboard";
+            }
+            else{
+                return "redirect:/";
+            }
+        } 
+
 // 4. Define the `doctorDashboard` Method:
 //    - Handles HTTP GET requests to `/doctorDashboard/{token}`.
 //    - Accepts a doctor's token as a path variable.
