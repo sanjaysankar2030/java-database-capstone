@@ -49,6 +49,7 @@ public class Doctor {
     @Column(name = "available_times")
     private List<String> available_times;
 
+
     // Getters and Setters
 
     public Long getId() {

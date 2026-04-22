@@ -44,7 +44,7 @@ public interface AppointmentRepository extends JpaRepository<Appointment,Long>{
    @Modifying
    @Transactional
    @Query("DELETE FROM Appointment a WHERE a.doctor.id = :doctorId")
-   void deleteAppointmentsByDoctorId(@Param("doctorId") Long doctorId);
+   void deleteAllByDoctorId(@Param("doctorId") Long doctorId);
 //    - **deleteAllByDoctorId**:
 //      - This method deletes all appointments associated with a particular doctor.
 //      - It is marked as @Modifying and @Transactional, which makes it a modification query, ensuring that the operation is executed within a transaction.
@@ -76,8 +76,7 @@ public interface AppointmentRepository extends JpaRepository<Appointment,Long>{
 
    @Modifying
    @Transactional
-   @Query("UPDATE Appointment a SET a.status = :status WHERE a.id = :id")
-   void updateStatus(@Param("status") int status, @Param("id") long id);//    - **updateStatus**:
+   @Query("UPDATE Appointment a SET a.status = :status WHERE a.id = :id") void updateStatus(@Param("status") int status, @Param("id") long id);//    - **updateStatus**:
 //      - This method updates the status of a specific appointment based on its ID.
 //      - Return type: void
 //      - Parameters: int status, long id
